@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <report
+        id="action_out_invoice_report_xls"
+        model="out_invoice.report"
+        string="Generar Reporte Ventas"
+        report_type="xlsx"
+        name="ven_invoice_report.out_invoice_report.xls"
+        file="reporte_ventas"
+        attachment_use="False"
+        />
+    
+    <report
+        id="action_in_invoice_report_xls"
+        model="in_invoice.report"
+        string="Generar Reporte Gastos"
+        report_type="xlsx"
+        name="ven_invoice_report.in_invoice_report.xls"
+        file="reporte_gastos"
+        attachment_use="False"
+        />
+
+</odoo>

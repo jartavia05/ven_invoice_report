@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Customer Invoice -->
+    <record id="out_invoice_report_wizard" model="ir.ui.view" >
+        <field name="name">Reporte - Facturacion de Clientes</field>
+        <field name="model">out_invoice.report</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Reporte - Facturacion de Clientes">
+                <group>
+                    <group>
+                        <field name="date_start"/>
+                    </group>
+                    <group>
+                        <field name="date_end"/>
+                    </group>
+                </group>
+                <footer>
+                    <button name="print_xls_report" string="Generar reporte" type="object" class="oe_highlight"/>
+                    <button string="Cancelar" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <act_window id="action_out_invoice_report_wizard"
+        name="Reporte - Facturacion de Clientes"
+        res_model="out_invoice.report"
+        view_mode="form"
+        target="new"/>
+
+
+    <!-- Vendor Invoice -->
+        <record id="in_invoice_report_wizard" model="ir.ui.view" >
+        <field name="name">Reporte - Facturacion de Proveedores</field>
+        <field name="model">in_invoice.report</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Reporte - Facturacion de Proveedores">
+                <group>
+                    <group>
+                        <field name="date_start"/>
+                    </group>
+                    <group>
+                        <field name="date_end"/>
+                    </group>
+                </group>
+                <footer>
+                    <button name="print_xls_report" string="Generar reporte" type="object" class="oe_highlight"/>
+                    <button string="Cancelar" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <act_window id="action_in_invoice_report_wizard"
+        name="Reporte - Facturacion de Proveedores"
+        res_model="in_invoice.report"
+        view_mode="form"
+        target="new"/>
+
+    <menuitem action="action_out_invoice_report_wizard"
+        id="menu_out_invoice_report_wizard"
+        name="Reporte de Ventas"
+        parent="account.account_reports_management_menu"/>
+
+    <menuitem action="action_in_invoice_report_wizard"
+        id="menu_in_invoice_report_wizard"
+        name="Reporte de Gastos"
+        parent="account.account_reports_management_menu"/>
+</odoo>
